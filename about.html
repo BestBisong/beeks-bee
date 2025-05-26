@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BEKKS & BEE (Nigeria) Limited</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        /* CSS Content from style.css */
+        :root {
+          /* Primary Colors */
+          --primary-color: #0056b3;
+          --primary-dark: #00387a;
+          --primary-light: #4a8cda;
+          
+          /* Secondary & Accent Colors */
+          --secondary-color: #3dd8c7;
+          --accent-color: #ff6b35;
+          
+          /* Neutral Colors */
+          --dark: #111827;
+          --darker: #0a101f;
+          --light: #f8fafc;
+          --light-gray: #e2e8f0;
+          --mid-gray: #94a3b8;
+          
+          /* Background Colors */
+          --bg-primary: var(--light);
+          --bg-secondary: #f1f5f9;
+          --bg-dark: var(--dark);
+          
+          /* Text Colors */
+          --text-primary: #1e293b;
+          --text-secondary: #64748b;
+          --text-light: var(--light);
+          
+          /* Font Families */
+          --font-primary: 'Roboto', 'Segoe UI', sans-serif;
+          --font-heading: 'Montserrat', 'Segoe UI', sans-serif;
+          
+          /* Border Radius */
+          --radius-sm: 4px;
+          --radius-md: 8px;
+          --radius-lg: 16px;
+          
+          /* Shadows */
+          --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+          --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.07);
+          --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.1);
+          
+          /* Transitions */
+          --transition-fast: 0.2s ease;
+          --transition-medium: 0.3s ease;
+          --transition-slow: 0.5s ease;
+          
+          /* Spacing */
+          --spacing-xs: 0.5rem;
+          --spacing-sm: 1rem;
+          --spacing-md: 2rem;
+          --spacing-lg: 3rem;
+          --spacing-xl: 5rem;
+          
+          /* Container Widths */
+          --container-sm: 960px;
+          --container-md: 1140px;
+          --container-lg: 1320px;
+          
+          /* Z-index layers */
+          --z-back: -10;
+          --z-normal: 1;
+          --z-front: 10;
+          --z-modal: 100;
+        }
+
+        *,
+        *::before,
+        *::after {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html {
+          font-size: 16px;
+          scroll-behavior: smooth;
+          scroll-padding-top: 80px;
+        }
+
+        body {
+          font-family: var(--font-primary);
+          font-weight: 400;
+          line-height: 1.6;
+          color: var(--text-primary);
+          background-color: var(--bg-primary);
+          transition: background-color var(--transition-medium), color var(--transition-medium);
+          overflow-x: hidden;
+        }
+
+        .container {
+          width: 100%;
+          max-width: var(--container-lg);
+          margin: 0 auto;
+          padding: 0 var(--spacing-md);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          font-family: var(--font-heading);
+          font-weight: 700;
+          line-height: 1.3;
+          margin-bottom: var(--spacing-sm);
+        }
+
+        h1 {
+          font-size: 2.75rem;
+        }
+
+        h2 {
+          font-size: 2.25rem;
+        }
+
+        h3 {
+          font-size: 1.75rem;
+        }
+
+        h4 {
+          font-size: 1.25rem;
+        }
+
+        p {
+          margin-bottom: var(--spacing-sm);
+        }
+
+        .section-title {
+          position: relative;
+          display: inline-block;
+          margin-bottom: var(--spacing-lg);
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: var(--text-primary);
+        }
+
+        .section-title::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 60px;
+          height: 4px;
+          background: var(--primary-color);
+          border-radius: var(--radius-sm);
+        }
+
+        .section-subtitle {
+          font-size: 1.25rem;
+          color: var(--text-secondary);
+          margin-bottom: var(--spacing-md);
+          max-width: 700px;
+        }
+
+        /* Header */
+        header {
+          background-color: var(--bg-primary);
+          box-shadow: var(--shadow-sm);
+          padding: var(--spacing-sm) 0;
+        }
+
+        .header-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 80px;
+        }
+
+        .logo h1 {
+          font-size: 2rem;
+          font-weight: 900;
+          margin-bottom: 0;
+          color: var(--primary-color);
+        }
+
+        .logo span {
+          font-weight: 400;
+          color: var(--text-primary);
+          margin-left: 4px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+          background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+          color: var(--text-light);
+          padding: var(--spacing-xl) 0;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-section::before {
+          content: '';
+          position: absolute;
+          top: -10%;
+          left: -5%;
+          width: 70%;
+          height: 120%;
+          background: linear-gradient(140deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+          transform: skewX(-15deg);
+          z-index: var(--z-back);
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: var(--z-normal);
+        }
+
+        .hero-content h1 {
+          font-size: 3.5rem;
+          margin-bottom: var(--spacing-md);
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-content p {
+          font-size: 1.25rem;
+          opacity: 0.9;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-section {
+          padding: var(--spacing-xl) 0;
+        }
+
+        .about-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: var(--spacing-lg);
+          align-items: center;
+          margin-bottom: var(--spacing-lg);
+        }
+
+        .about-text h3 {
+          color: var(--primary-color);
+          margin-bottom: var(--spacing-sm);
+        }
+
+.about-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: none;
+}
+
+.about-image img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  filter: none;
+  background: none;
+  mix-blend-mode: normal;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+
+.about-image::before,
+.about-image::after {
+  display: none;
+}
+
+.about-image img::before,
+.about-image img::after {
+  display: none;
+}
+
+
+.about-content .about-image {
+  position: relative;
+  background: transparent;
+}
+
+.about-content .about-image img {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  filter: none !important;
+}
+
+        /* Services Section */
+        .services-section {
+          padding: var(--spacing-xl) 0;
+          background-color: var(--bg-secondary);
+        }
+
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: var(--spacing-md);
+          margin-top: var(--spacing-lg);
+        }
+
+        .service-card {
+          background-color: var(--bg-primary);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-md);
+          box-shadow: var(--shadow-md);
+          transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .service-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 5px;
+          background-color: var(--primary-color);
+          transition: height var(--transition-medium);
+        }
+
+        .service-card:hover {
+          transform: translateY(-10px);
+          box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::before {
+          height: 100%;
+          opacity: 0.05;
+        }
+
+        .service-icon {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          background-color: rgba(0, 86, 179, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: var(--spacing-sm);
+          transition: background-color var(--transition-medium);
+        }
+
+        .service-icon i {
+          font-size: 2rem;
+          color: var(--primary-color);
+          transition: color var(--transition-medium);
+        }
+
+        .service-card:hover .service-icon {
+          background-color: var(--primary-color);
+        }
+
+        .service-card:hover .service-icon i {
+          color: var(--text-light);
+        }
+
+        /* Experience Section */
+        .experience-section {
+          padding: var(--spacing-xl) 0;
+        }
+
+        .experience-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: var(--spacing-md);
+          margin-top: var(--spacing-lg);
+        }
+
+        .experience-card {
+          background-color: var(--bg-secondary);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-md);
+          box-shadow: var(--shadow-sm);
+          transition: transform var(--transition-medium);
+          border-left: 4px solid var(--primary-color);
+        }
+
+        .experience-card:hover {
+          transform: translateY(-5px);
+        }
+
+        .experience-card h4 {
+          color: var(--primary-color);
+          margin-bottom: var(--spacing-xs);
+        }
+
+        /* HSE Policy Section */
+        .hse-section {
+          padding: var(--spacing-xl) 0;
+          background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+          color: var(--text-light);
+        }
+
+        .hse-content {
+          background-color: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-lg);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: var(--shadow-lg);
+        }
+
+        .hse-content h3 {
+          color: var(--text-light);
+          margin-bottom: var(--spacing-md);
+        }
+
+        .hse-list li {
+          margin-bottom: var(--spacing-sm);
+          padding-left: var(--spacing-md);
+          position: relative;
+        }
+
+        .hse-list li::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: var(--secondary-color);
+          font-weight: bold;
+        }
+
+        /* Contact Info Section */
+        .contact-info-section {
+          padding: var(--spacing-xl) 0;
+          background-color: var(--bg-secondary);
+        }
+
+        .contact-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: var(--spacing-md);
+          margin-top: var(--spacing-lg);
+        }
+
+        .contact-card {
+          background-color: var(--bg-primary);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-md);
+          box-shadow: var(--shadow-md);
+          text-align: center;
+        }
+
+        .contact-card i {
+          font-size: 2.5rem;
+          color: var(--primary-color);
+          margin-bottom: var(--spacing-sm);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .hero-content h1 {
+            font-size: 2.5rem;
+          }
+          
+          .about-content {
+            grid-template-columns: 1fr;
+          }
+          
+          .services-grid,
+          .experience-grid,
+          .contact-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+    </style>
+      <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+           <!-- //website designed By Bisong Best
+    contact info +234 814 0683 459
+    email  bestbisong32@gmail.com -->
+
+    <div class="container header-container">
+      <div class="logo">
+        <img src="99f1b9da-eb80-4835-bab3-7eae7bd48371.jpeg" width="60" height="50" alt="Commercial logo" />
+        <h1>Bekks&Bee<span>(Nigeria) Limited</span></h1>
+      </div>
+      <nav>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About BEKKS & BEE</h1>
+                <p>To become the best indigenous African company in rendering ENGINEERING, CONSTRUCTION and REAL ESTATE SERVICES and to create and maintain effective and efficient work environment</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Corporate Information</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Engineering Excellence Since Incorporation</h3>
+                    <p>BEKKS & BEE (NIGERIA) LIMITED is a company incorporated in Nigeria to render engineering consultancy, construction, project management, environmental studies and protection. It is duly registered and incorporated by the corporate affairs commission.</p>
+                    <p>Our mission is clear: To become the best indigenous African company in rendering Engineering, Construction and Real Estate Services and to create and maintain effective and efficient work environment.</p>
+                    <p>BEKKS & BEE (NIG) LIMITED is a 100% shareholding company with PETER BISONG as our Chief Executive Officer and Executive Director-Projects.</p>
+                </div>
+                <div class="about-image">
+                    <img src="LOGO.png" alt="BEKKS & BEE Office logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Scope of Services</h2>
+            <p class="section-subtitle">We provide comprehensive engineering and construction services to meet all your project needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Engineering Consultancy</h3>
+                    <p>Construction and project management services with focus on quality and innovation</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Real Estate Development</h3>
+                    <p>Comprehensive real estate development solutions from planning to execution</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmental Studies</h3>
+                    <p>Environmental studies and protection services ensuring sustainable development</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Contracting</h3>
+                    <p>Professional contracting services for various construction and infrastructure projects</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Foreign Sourcing</h3>
+                    <p>Foreign sourcing and procurement services for specialized equipment and materials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Experience Profile</h2>
+            <p class="section-subtitle">Our extensive portfolio demonstrates our commitment to excellence across various sectors</p>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h4>Educational Infrastructure</h4>
+                    <p>Rehabilitation of 1 No 15 classroom block, staff office and 2 stores at St. Paul's Primary school, Oyonum Obubra Local Government Area for state Universal basic education board, Calabar, Cross River State.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>University Projects</h4>
+                    <p>Construction of 2 No Engineering Design/drawing studio buildings in the faculty of engineering Calabar campus for Cross River University of Technology. Extension and construction of existing Engineering workshop 1 for Federal University of Technology Owerri.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>Residential Development</h4>
+                    <p>Construction of three bedrooms Semi-detached Duplex for Greenfield projects International ltd.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>Healthcare Facilities</h4>
+                    <p>Construction of primary health center for millennium development goals conditional grant scheme.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>Educational Facilities</h4>
+                    <p>Construction of 1 No 6 classroom block office, store and staff room at community junior secondary school Abini, for SUBEB Cross River State.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>Infrastructure Projects</h4>
+                    <p>Laying of pipes and construction of reservoirs and building for S.C.C (nig) limited. Supply for pipes and fittings, installation of kiosk and road rehabilitation for WK-Fechard Joint venture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HSE Policy Section -->
+    <section class="hse-section">
+        <div class="container">
+            <div class="hse-content">
+                <h2 class="section-title" style="color: white;">Health, Safety and Environment Policy</h2>
+                <h3>Statement of Quality</h3>
+                <p>The management of the Project Quality Plan is the responsibility of the C.E.O of BEKKS & BEE (Nigeria) Limited.</p>
+                
+                <ul class="hse-list">
+                    <li>BEKKS & BEE recognizes that a well-managed operation is more likely to be completed incident free and efficiently. HSE is considered as high was on the agenda of our business objectives.</li>
+                    <li>BEKKS & BEE is committed to establishing and maintaining effective system for managing the health, safety and environment impact of our operations.</li>
+                    <li>Project employees, sub-contractors and any third parties from injury and prevent damage or loss of property.</li>
+                    <li>It is the responsibility of all our managers to actively pursue an injury free work place.</li>
+                    <li>BEKKS & BEE is committed to ensuring all BEKKS & BEE and contractor employees are competent and adequately trained to perform their task safely, and that each individual has a responsibility to do so.</li>
+                    <li>BEKKS & BEE policy is that all incident or accident are reported without "blame" in order that they may be properly investigated and appropriate corrective actions can be taken.</li>
+                    <li>The protection of life and prevention of injuries shall receive priority above everything else.</li>
+                    <li>BEKKS & BEE shall co-operate with federal, state and local governments and any other relevant stakeholders in sharing/analyzing emerging HSE problems and develop cost effective, scientifically based HSE standards.</li>
+                </ul>
+                
+                <p style="margin-top: 2rem;"><strong>ENGR. PETER BISONG</strong><br>C.E.O</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <p class="section-subtitle">Get in touch with us for your engineering and construction needs</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Office Location</h4>
+                    <p>96, MCC Road, Calabar, Nigeria</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h4>Phone Numbers</h4>
+                    <p>+234-70-39-201-744<br>+234-90-64-885-934<br>+234-80-38-023-859</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email Address</h4>
+                    <p>bekksandbee@yahoo.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-globe"></i>
+                    <h4>Website</h4>
+                    <p>www.bekksandbee.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>Bekks&Bee<span>Ltd</span></h3>
+          <p>Leading civil engineering and construction company in Nigeria with a commitment to excellence, innovation, and sustainable development.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#contact">Road Construction</a></li>
+            <li><a href="#contact">Building Construction</a></li>
+            <li><a href="#contact">Water Infrastructure</a></li>
+            <li><a href="#contact">Industrial Facilities</a></li>
+            <li><a href="#contact">Engineering Consultancy</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> No 96 MCC Road, calabar</li>
+            <li><i class="fas fa-phone-alt"></i>+234-70-39-201-744<br>+234-90-64-885-934<br>+234-80-38-023-859</li>
+            <li><i class="fas fa-envelope"></i> bekksandbee@yahoo.com</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Bekks&Bee. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="TOS.html">Terms of Service</a>
+          <a href="careers.html">Careers</a>
+            <a href="projects.html">Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
