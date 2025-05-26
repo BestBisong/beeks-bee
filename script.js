@@ -44,20 +44,20 @@ mobileNav.innerHTML = `
   </div>
   <div class="mobile-nav-content">
     <ul>
-      <li><a href="#hero">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#expertise">Expertise</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </div>
   <div class="mobile-nav-footer">
     <div class="social-links">
-      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.x.com/bekksandbee/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.Facebook.com/bekksandbee/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/bekksandbee/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
     </div>
   </div>
 `;
