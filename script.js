@@ -45,7 +45,7 @@ mobileNav.innerHTML = `
   <div class="mobile-nav-content">
     <ul>
       <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About Us</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#expertise">Expertise</a></li>
